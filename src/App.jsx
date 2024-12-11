@@ -142,7 +142,8 @@ function App() {
     if (now - lastPlayedTime > 500) {
       if (hohoRef.current) {
         hohoRef.current.currentTime = 0;
-        hohoRef.current.play().catch(error => console.log('Audio play failed:', error));
+        hohoRef.current.play()
+          .catch(error => console.log('Audio play failed:', error));
         setLastPlayedTime(now);
       }
     }
@@ -192,7 +193,7 @@ function App() {
 
       <audio 
         ref={hohoRef} 
-        src="/ho-ho-ho.mp3" 
+        src="/tacky2024/ho-ho-ho.mp3" 
         preload="auto"
       />
 
