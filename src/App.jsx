@@ -236,7 +236,7 @@ function App() {
 
       <div className="text-center p-8 bg-green-900/50">
         <h1 className="text-6xl font-bold mb-4 animate-pulse bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-transparent bg-clip-text">
-          🤖 SANTA'S SUPER AWESOME AI COMPANY 🤖
+          🤖 SANTA'S SUPER <SPECTACULAR>SPECTACULAR</SPECTACULAR> AI COMPANY 🤖
         </h1>
         <div className="animate-bounce overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-[marquee_15s_linear_infinite]">
