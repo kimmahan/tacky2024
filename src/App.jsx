@@ -37,9 +37,14 @@ const MusicPlayer = () => {
   const audioRef = useRef(null);
 
   const tracks = [
-    { url: "/track1.mp3", title: "AI Christmas Carol #1" },
-    { url: "/track2.mp3", title: "Robot Holiday Remix" },
-    { url: "/track3.mp3", title: "Neural Network Noel" }
+    { url: "/tacky2024/track1.mp3", title: "AI Christmas Carol #1" },
+    { url: "/tacky2024/track2.mp3", title: "Robot Holiday Remix" },
+    { url: "/tacky2024/track3.mp3", title: "Neural Network Noel" }
+    { url: "/tacky2024/track4.mp3", title: "Holiday Hullabaloo" }
+    { url: "/tacky2024/track5.mp3", title: "Holiday Hullabaloo2" }
+    { url: "/tacky2024/track6.mp3", title: "Metallic Yule" }
+    { url: "/tacky2024/track7.mp3", title: "Metal Christmas Mayhem" }
+    { url: "/tacky2024/track8.mp3", title: "Holiday Electric Vibes" }
   ];
 
   useEffect(() => {
@@ -230,7 +235,7 @@ function App() {
 
       <div className="text-center p-8 bg-green-900/50">
         <h1 className="text-6xl font-bold mb-4 animate-pulse bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-transparent bg-clip-text">
-          🤖 SUPER AWESOME AI COMPANY 🤖
+          🤖 SANTA'S SUPER AWESOME AI COMPANY 🤖
         </h1>
         <div className="animate-bounce overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-[marquee_15s_linear_infinite]">
@@ -248,7 +253,7 @@ function App() {
             <h2 className="text-4xl font-bold mb-4 text-red-600">
               Our AI Does Everything!*
             </h2>
-            <p className="text-sm italic">*Results may vary. AI might be caroling.</p>
+            <p className="text-sm italic">*Results may vary. AI might be busy caroling.</p>
             <div className="mt-4 space-y-2">
               {[
                 { icon: Brain, text: "Predicts who's naughty or nice with 50% accuracy!" },
