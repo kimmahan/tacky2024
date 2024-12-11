@@ -39,11 +39,11 @@ const MusicPlayer = () => {
   const tracks = [
     { url: "/tacky2024/track1.mp3", title: "AI Christmas Carol #1" },
     { url: "/tacky2024/track2.mp3", title: "Robot Holiday Remix" },
-    { url: "/tacky2024/track3.mp3", title: "Neural Network Noel" }
-    { url: "/tacky2024/track4.mp3", title: "Holiday Hullabaloo" }
-    { url: "/tacky2024/track5.mp3", title: "Holiday Hullabaloo2" }
-    { url: "/tacky2024/track6.mp3", title: "Metallic Yule" }
-    { url: "/tacky2024/track7.mp3", title: "Metal Christmas Mayhem" }
+    { url: "/tacky2024/track3.mp3", title: "Neural Network Noel" },  // Added comma
+    { url: "/tacky2024/track4.mp3", title: "Holiday Hullabaloo" },   // Added comma
+    { url: "/tacky2024/track5.mp3", title: "Holiday Hullabaloo2" },  // Added comma
+    { url: "/tacky2024/track6.mp3", title: "Metallic Yule" },        // Added comma
+    { url: "/tacky2024/track7.mp3", title: "Metal Christmas Mayhem" },// Added comma
     { url: "/tacky2024/track8.mp3", title: "Holiday Electric Vibes" }
   ];
 
