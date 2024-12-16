@@ -17,7 +17,7 @@ const Snowflake = ({ left, delay, isApocalypse }) => (
 
 const DancingCharacter = ({ left, delay, top = false, onClick, isApocalypse }) => (
   <div 
-    className="fixed text-6xl cursor-pointer hover:scale-125 transition-transform"
+    className="fixed text-8xl cursor-pointer hover:scale-125 transition-transform"
     style={{
       left: `${left}%`,
       ...(top ? { top: '180px' } : { bottom: '20px' }),
@@ -201,27 +201,34 @@ function App() {
 
       <MusicPlayer />
 
-      {bottomSantas.map(santa => (
-  <DancingCharacter 
-    key={`bottom-${santa.id}`} 
-    left={santa.left} 
-    delay={santa.delay}
-    onClick={handleSantaClick}
-  />
-))}
-
-{topSantas.map(santa => (
-  <DancingCharacter 
-    key={`top-${santa.id}`} 
-    left={santa.left} 
-    delay={santa.delay}
-    top={true}
-    onClick={handleSantaClick}
-  />
+      {snowflakes.map(flake => (
+        <Snowflake 
+          key={flake.id} 
+          left={flake.left} 
+          delay={flake.delay} 
+          isApocalypse={isApocalypse}
+        />
       ))}
 
-      {snowflakes.map(flake => (
-        <Snowflake key={flake.id} left={flake.left} delay={flake.delay} />
+      {bottomSantas.map(santa => (
+        <DancingCharacter 
+          key={`bottom-${santa.id}`} 
+          left={santa.left} 
+          delay={santa.delay}
+          onClick={handleSantaClick}
+          isApocalypse={isApocalypse}
+        />
+      ))}
+
+      {topSantas.map(santa => (
+        <DancingCharacter 
+          key={`top-${santa.id}`} 
+          left={santa.left} 
+          delay={santa.delay}
+          top={true}
+          onClick={handleSantaClick}
+          isApocalypse={isApocalypse}
+        />
       ))}
 
       <div 
@@ -253,7 +260,7 @@ function App() {
           <div className="inline-block animate-[marquee_15s_linear_infinite]">
             <p className="text-white text-xl">
               {isApocalypse
-        ? "💀 Welcome to the FUTURE of EVIL AI! 🧝‍♂️ Now with extra CHAOS! ⚡ The elves have gone rogue! 🔥 You won't survive what happens next! 💀"
+        ? "💀 Welcome to the FUTURE of EVIL AI! 🧝‍♂️ Now with extra CHAOS! ⚡ The elves have gone rogue! �� You won't survive what happens next! 💀"
         : "🎄 Welcome to the FUTURE of AI! 🎅 Now with extra HOLIDAY CHEER! 🎁 Click here for amazing AI discoveries! ❄️ You won't believe what happens next! 🦌"
       }
             </p>
