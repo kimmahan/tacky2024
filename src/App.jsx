@@ -3,7 +3,7 @@ import { Bot, Sparkles, Brain, Zap, Music, SkipForward, SkipBack, Pause, Play } 
 
 const Snowflake = ({ left, delay, isApocalypse }) => (
   <div 
-    className="fixed pointer-events-none text-white opacity-70 text-4xl"
+    className="fixed pointer-events-none text-white opacity-70 text-3xl"
     style={{
       left: `${left}%`,
       animation: "fall 10s linear infinite",
@@ -207,7 +207,6 @@ function App() {
     left={santa.left} 
     delay={santa.delay}
     onClick={handleSantaClick}
-    isApocalypse={isApocalypse}
   />
 ))}
 
@@ -218,7 +217,6 @@ function App() {
     delay={santa.delay}
     top={true}
     onClick={handleSantaClick}
-    isApocalypse={isApocalypse}
   />
       ))}
 
