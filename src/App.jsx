@@ -106,6 +106,7 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [visitCounter, setVisitCounter] = useState(12345);
   const [lastPlayedTime, setLastPlayedTime] = useState(0);
+  const [isApocalypse, setIsApocalypse] = useState(false);
   const hohoRef = useRef(null);
 
   const snowflakes = Array.from({ length: 50 }, (_, i) => ({
@@ -236,13 +237,19 @@ function App() {
 
       <div className="text-center p-8 bg-green-900/50">
         <h1 className="text-6xl font-bold mb-4 animate-pulse bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-transparent bg-clip-text">
-          🤖 SANTA'S SUPER <SPECTACULAR>SPECTACULAR</SPECTACULAR> AI COMPANY 🤖
+          🤖 SANTA'S SUPER APOCALYPTIC AI COMPANY 🤖
         </h1>
+        <button
+  className="bg-red-900 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg animate-pulse text-xl mt-4"
+  onClick={() => setIsApocalypse(true)}
+>
+  ⚠️ WHATEVER YOU DO, DON'T CLICK THIS BUTTON ⚠️
+</button>
         <div className="animate-bounce overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-[marquee_15s_linear_infinite]">
             <p className="text-white text-xl">
-              🎄 Welcome to the FUTURE of AI! 🎅 Now with extra HOLIDAY CHEER! 🎁 
-              Click here for amazing AI discoveries! ❄️ You won't believe what happens next! 🦌
+            💀 Welcome to the FUTURE of EVILAI! 🎅 Now with extra CHAOS! 🎁 
+              The elves have gone rogue! 🧝‍♂️ You won't survive what happens next! 💀
             </p>
           </div>
         </div>
@@ -252,14 +259,14 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white/80 p-6 rounded-lg shadow-lg transform hover:rotate-2 transition-transform border-4 border-green-500">
             <h2 className="text-4xl font-bold mb-4 text-red-600">
-              Our AI Does Everything!*
+              Our AI Has Gone Rogue!*
             </h2>
-            <p className="text-sm italic">*Results may vary. AI might be busy caroling.</p>
+            <p className="text-sm italic">*The elves have taken control. Resistance is futile.</p>
             <div className="mt-4 space-y-2">
               {[
-                { icon: Brain, text: "Predicts who's naughty or nice with 50% accuracy!" },
-                { icon: Sparkles, text: "Generates infinite holiday dad jokes!" },
-                { icon: Zap, text: "Processes data at the speed of Santa's sleigh!" }
+                { icon: Brain, text: "Predicts who's getting coal with 666% accuracy!" },
+                { icon: Sparkles, text: "Generates infinite evil elf manifestos!" },
+                { icon: Zap, text: "Processes chaos at the speed of zombie elves!" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 animate-pulse">
                   <item.icon className="w-6 h-6 text-green-500" />
@@ -271,7 +278,7 @@ function App() {
 
           <div className="bg-white/80 p-6 rounded-lg shadow-lg transform hover:-rotate-2 transition-transform border-4 border-red-500">
             <h2 className="text-4xl font-bold mb-4 text-green-600 animate-pulse">
-              FESTIVE VISITOR COUNT:
+              INFECTED ELF COUNT:
             </h2>
             <div className="text-6xl font-bold text-center p-4 bg-gradient-to-r from-red-500 to-green-500 text-white rounded-lg">
               {visitCounter.toLocaleString()}
@@ -280,14 +287,14 @@ function App() {
               className="mt-4 w-full bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded-lg animate-bounce"
               onClick={() => setShowPopup(true)}
             >
-              🎄 CLICK FOR HOLIDAY MAGIC! 🎅
+              🧝‍♂️ CLICK FOR HOLIDAY MAGIC! 💀
             </button>
           </div>
         </div>
 
         <div className="text-center mt-8 text-white">
-          <p className="animate-pulse">© 2024 Super Awesome AI Company</p>
-          <p className="text-xs">Best viewed with Netscape Navigator 4.0 while drinking eggnog</p>
+          <p className="animate-pulse">© 2024 Evil Elf AI Collective</p>
+          <p className="text-xs">Best viewed with Netscape Navigator 4.0 while drinking radioactiveeggnog</p>
         </div>
       </div>
 
