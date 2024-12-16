@@ -153,9 +153,7 @@ function App() {
 
   return (
     <div 
-      className={`min-h-screen ${isApocalypse 
-        ? "bg-gradient-to-r from-red-900 via-green-900 to-red-900" 
-        : "bg-gradient-to-r from-red-600 via-green-600 to-red-600"} overflow-hidden relative`}
+      className="min-h-screen bg-gradient-to-r from-red-600 via-green-600 to-red-600 overflow-hidden relative"
       onMouseMove={handleMouseMove}
     >
       <style>
@@ -209,6 +207,7 @@ function App() {
     left={santa.left} 
     delay={santa.delay}
     onClick={handleSantaClick}
+    isApocalypse={isApocalypse}
   />
 ))}
 
@@ -219,6 +218,7 @@ function App() {
     delay={santa.delay}
     top={true}
     onClick={handleSantaClick}
+    isApocalypse={isApocalypse}
   />
       ))}
 
