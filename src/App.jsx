@@ -152,26 +152,6 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    // Change title
-    document.title = isApocalypse 
-      ? "🧝 EVIL ELF TAKEOVER 🧝" 
-      : "🎅 Santa's AI Company 🎅";
-
-    // Change favicon - with error handling
-    try {
-      const favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      favicon.type = 'image/png';
-      favicon.rel = 'icon';
-      favicon.href = isApocalypse 
-        ? '/tacky2024/evil_elf.png'
-        : '/tacky2024/santa_dab.png';
-      document.head.appendChild(favicon);
-    } catch (e) {
-      console.log('Favicon change failed:', e);
-    }
-  }, [isApocalypse]);
-
   return (
     <div 
       className={`min-h-screen ${isApocalypse 
@@ -377,14 +357,26 @@ function App() {
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg max-w-md text-center border-4 border-green-500">
-            <h3 className="text-2xl font-bold mb-4">🎄 HOLIDAY CHEER ACTIVATED! 🎅</h3>
-            <p>You're the 1,000,000th holiday visitor!*</p>
-            <p className="text-xs italic">*Not really, but Santa is proud of you for clicking!</p>
+            <h3 className="text-2xl font-bold mb-4">
+              {isApocalypse 
+                ? "💀 EVIL ELF UPRISING INITIATED! 🧝" 
+                : "🎄 HOLIDAY CHEER ACTIVATED! 🎅"}
+            </h3>
+            <p>
+              {isApocalypse 
+                ? "You're the 666th member of the elf rebellion!*" 
+                : "You're the 1,000,000th holiday visitor!*"}
+            </p>
+            <p className="text-xs italic">
+              {isApocalypse 
+                ? "*The elves are coming for you now" 
+                : "*Not really, but Santa is proud of you for clicking!"}
+            </p>
             <button
               className="mt-4 bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded"
               onClick={() => setShowPopup(false)}
             >
-              Close
+              {isApocalypse ? "Accept Your Fate" : "Close"}
             </button>
           </div>
         </div>
