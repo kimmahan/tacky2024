@@ -109,6 +109,7 @@ function App() {
   const [lastPlayedTime, setLastPlayedTime] = useState(0);
   const [isApocalypse, setIsApocalypse] = useState(false);
   const hohoRef = useRef(null);
+  const elfSoundRef = useRef(null);
 
   const snowflakes = Array.from({ length: 50 }, (_, i) => ({
     id: i,
@@ -142,9 +143,10 @@ function App() {
   const handleSantaClick = () => {
     const now = Date.now();
     if (now - lastPlayedTime > 500) {
-      if (hohoRef.current) {
-        hohoRef.current.currentTime = 0;
-        hohoRef.current.play()
+      const audioRef = isApocalypse ? elfSoundRef : hohoRef;
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
+        audioRef.current.play()
           .catch(error => console.log('Audio play failed:', error));
         setLastPlayedTime(now);
       }
@@ -153,7 +155,9 @@ function App() {
 
   return (
     <div 
-      className="min-h-screen bg-gradient-to-r from-red-600 via-green-600 to-red-600 overflow-hidden relative"
+      className={`min-h-screen ${isApocalypse 
+        ? "bg-gradient-to-r from-black via-red-950 to-black" 
+        : "bg-gradient-to-r from-red-400 via-green-400 to-red-400"} overflow-hidden relative`}
       onMouseMove={handleMouseMove}
     >
       <style>
@@ -202,6 +206,11 @@ function App() {
       <audio 
         ref={hohoRef} 
         src="/tacky2024/ho-ho-ho.mp3" 
+        preload="auto"
+      />
+      <audio 
+        ref={elfSoundRef} 
+        src="/tacky2024/elf-singing.mp3" 
         preload="auto"
       />
 
@@ -253,7 +262,7 @@ function App() {
         <h1 className="text-6xl font-bold mb-4 animate-pulse bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-transparent bg-clip-text">
           {isApocalypse 
     ? "🤖 SANTA'S SUPER APOCALYPTIC AI COMPANY 🤖"
-    : "🤖 SANTA'S SUPER SPECTACULAR AI COMPANY 🤖"
+    : "�� SANTA'S SUPER SPECTACULAR AI COMPANY 🤖"
   }
         </h1>
         <button
