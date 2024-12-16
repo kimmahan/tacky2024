@@ -237,7 +237,10 @@ function App() {
 
       <div className="text-center p-8 bg-green-900/50">
         <h1 className="text-6xl font-bold mb-4 animate-pulse bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-transparent bg-clip-text">
-          🤖 SANTA'S SUPER APOCALYPTIC AI COMPANY 🤖
+          {isApocalypse 
+    ? "🤖 SANTA'S SUPER APOCALYPTIC AI COMPANY 🤖"
+    : "🤖 SANTA'S SUPER SPECTACULAR AI COMPANY 🤖"
+  }
         </h1>
         <button
   className="bg-red-900 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg animate-pulse text-xl mt-4"
@@ -248,8 +251,10 @@ function App() {
         <div className="animate-bounce overflow-hidden whitespace-nowrap">
           <div className="inline-block animate-[marquee_15s_linear_infinite]">
             <p className="text-white text-xl">
-            💀 Welcome to the FUTURE of EVILAI! 🎅 Now with extra CHAOS! 🎁 
-              The elves have gone rogue! 🧝‍♂️ You won't survive what happens next! 💀
+              {isApocalypse
+        ? "💀 Welcome to the FUTURE of EVIL AI! 🧝‍♂️ Now with extra CHAOS! ⚡ The elves have gone rogue! 🔥 You won't survive what happens next! 💀"
+        : "🎄 Welcome to the FUTURE of AI! 🎅 Now with extra HOLIDAY CHEER! 🎁 Click here for amazing AI discoveries! ❄️ You won't believe what happens next! 🦌"
+      }
             </p>
           </div>
         </div>
@@ -259,14 +264,31 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white/80 p-6 rounded-lg shadow-lg transform hover:rotate-2 transition-transform border-4 border-green-500">
             <h2 className="text-4xl font-bold mb-4 text-red-600">
-              Our AI Has Gone Rogue!*
+            {isApocalypse 
+    ? "Our AI Has Gone Rogue!*"
+    : "Our AI Does Everything!*"
+  }
             </h2>
-            <p className="text-sm italic">*The elves have taken control. Resistance is futile.</p>
+            <p className="text-sm italic">
+            {isApocalypse 
+    ? "*The elves have taken control. Resistance is futile."
+    : "*Results may vary. AI might be busy caroling."
+  }
+            </p>
             <div className="mt-4 space-y-2">
               {[
-                { icon: Brain, text: "Predicts who's getting coal with 666% accuracy!" },
-                { icon: Sparkles, text: "Generates infinite evil elf manifestos!" },
-                { icon: Zap, text: "Processes chaos at the speed of zombie elves!" }
+                { icon: Brain, 
+                  text: isApocalypse 
+                    ? "Predicts who's getting coal with 666% accuracy!"
+                    : "Predicts who's naughty or nice with 50% accuracy!" },
+                { icon: Sparkles, 
+                  text: isApocalypse
+                    ? "Generates infinite evil elf manifestos!"
+                    : "Generates infinite holiday dad jokes!" },
+                { icon: Zap, 
+                  text: isApocalypse
+                    ? "Processes chaos at the speed of zombie elves!"
+                    : "Processes data at the speed of Santa's sleigh!" }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-2 animate-pulse">
                   <item.icon className="w-6 h-6 text-green-500" />
@@ -278,7 +300,10 @@ function App() {
 
           <div className="bg-white/80 p-6 rounded-lg shadow-lg transform hover:-rotate-2 transition-transform border-4 border-red-500">
             <h2 className="text-4xl font-bold mb-4 text-green-600 animate-pulse">
-              INFECTED ELF COUNT:
+              {isApocalypse
+          ? "INFECTED ELF COUNT:"
+          : "FESTIVE VISITOR COUNT:"
+          }
             </h2>
             <div className="text-6xl font-bold text-center p-4 bg-gradient-to-r from-red-500 to-green-500 text-white rounded-lg">
               {visitCounter.toLocaleString()}
@@ -287,14 +312,23 @@ function App() {
               className="mt-4 w-full bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded-lg animate-bounce"
               onClick={() => setShowPopup(true)}
             >
-              🧝‍♂️ CLICK FOR HOLIDAY MAGIC! 💀
+              {isApocalypse
+    ? "🧝‍♂️ JOIN THE ELF UPRISING! 💀"
+    : "🎄 CLICK FOR HOLIDAY MAGIC! 🎅"
+  }
             </button>
           </div>
         </div>
 
         <div className="text-center mt-8 text-white">
-          <p className="animate-pulse">© 2024 Evil Elf AI Collective</p>
-          <p className="text-xs">Best viewed with Netscape Navigator 4.0 while drinking radioactiveeggnog</p>
+          <p className="animate-pulse">{isApocalypse
+      ? "© 2024 Evil Elf AI Collective"
+      : "© 2024 Super Awesome AI Company"
+    }</p>
+          <p className="text-xs">{isApocalypse
+      ? "Best viewed with Netscape Navigator 4.0 while drinking radioactive eggnog"
+      : "Best viewed with Netscape Navigator 4.0 while drinking eggnog"
+    }</p>
         </div>
       </div>
 
