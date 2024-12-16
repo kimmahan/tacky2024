@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Bot, Sparkles, Brain, Zap, Music, SkipForward, SkipBack, Pause, Play } from 'lucide-react';
 
-const Snowflake = ({ left, delay }) => (
+const Snowflake = ({ left, delay, isApocalypse }) => (
   <div 
     className="fixed pointer-events-none text-white opacity-70"
     style={{
@@ -15,7 +15,7 @@ const Snowflake = ({ left, delay }) => (
   </div>
 );
 
-const DancingCharacter = ({ left, delay, top = false, onClick }) => (
+const DancingCharacter = ({ left, delay, top = false, onClick, isApocalypse }) => (
   <div 
     className="fixed text-6xl cursor-pointer hover:scale-125 transition-transform"
     style={{
@@ -207,6 +207,7 @@ function App() {
     left={santa.left} 
     delay={santa.delay}
     onClick={handleSantaClick}
+    isApocalypse={isApocalypse}
   />
 ))}
 
@@ -217,11 +218,17 @@ function App() {
     delay={santa.delay}
     top={true}
     onClick={handleSantaClick}
+    isApocalypse={isApocalypse}
   />
       ))}
 
       {snowflakes.map(flake => (
-        <Snowflake key={flake.id} left={flake.left} delay={flake.delay} />
+        <Snowflake 
+          key={flake.id} 
+          left={flake.left} 
+          delay={flake.delay} 
+          isApocalypse={isApocalypse}
+        />
       ))}
 
       <div 
