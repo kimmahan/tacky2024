@@ -190,6 +190,12 @@ function App() {
               transform: translateX(30px);
             }
           }
+
+          @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+          }
         `}
       </style>
 
@@ -251,7 +257,7 @@ function App() {
   }
         </h1>
         <button
-  className="bg-red-900 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg animate-pulse text-xl mt-4"
+  className="bg-red-900 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg animate-[pulse_1s_ease-in-out_infinite] text-xl mt-4 hover:animate-[shake_0.5s_ease-in-out_infinite]"
   onClick={() => setIsApocalypse(true)}
 >
   ⚠️ WHATEVER YOU DO, DON'T CLICK THIS BUTTON ⚠️
