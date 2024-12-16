@@ -11,11 +11,11 @@ const Snowflake = ({ left, delay }) => (
       top: '-20px'
     }}
   >
-    ❄️
+    {isApocalypse ? '🧝' : '❄️'}
   </div>
 );
 
-const DancingSanta = ({ left, delay, top = false, onClick }) => (
+const DancingCharacter = ({ left, delay, top = false, onClick }) => (
   <div 
     className="fixed text-6xl cursor-pointer hover:scale-125 transition-transform"
     style={{
@@ -23,11 +23,12 @@ const DancingSanta = ({ left, delay, top = false, onClick }) => (
       ...(top ? { top: '180px' } : { bottom: '20px' }),
       animation: "dance 2s infinite, moveLeftRight 4s infinite",
       animationDelay: `${delay}s`,
-      zIndex: 30
+      zIndex: 30,
+      filter: isApocalypse ? 'hue-rotate(280deg) brightness(0.8)' : 'none'
     }}
     onClick={onClick}
   >
-    🎅
+    {isApocalypse ? '🧝' : '🎅'}
   </div>
 );
 
@@ -201,22 +202,22 @@ function App() {
       <MusicPlayer />
 
       {bottomSantas.map(santa => (
-        <DancingSanta 
-          key={`bottom-${santa.id}`} 
-          left={santa.left} 
-          delay={santa.delay}
-          onClick={handleSantaClick}
-        />
-      ))}
+  <DancingCharacter 
+    key={`bottom-${santa.id}`} 
+    left={santa.left} 
+    delay={santa.delay}
+    onClick={handleSantaClick}
+  />
+))}
 
-      {topSantas.map(santa => (
-        <DancingSanta 
-          key={`top-${santa.id}`} 
-          left={santa.left} 
-          delay={santa.delay}
-          top={true}
-          onClick={handleSantaClick}
-        />
+{topSantas.map(santa => (
+  <DancingCharacter 
+    key={`top-${santa.id}`} 
+    left={santa.left} 
+    delay={santa.delay}
+    top={true}
+    onClick={handleSantaClick}
+  />
       ))}
 
       {snowflakes.map(flake => (
