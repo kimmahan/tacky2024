@@ -3,7 +3,7 @@ import { Bot, Sparkles, Brain, Zap, Music, SkipForward, SkipBack, Pause, Play } 
 
 const Snowflake = ({ left, delay, isApocalypse }) => (
   <div 
-    className="fixed pointer-events-none text-white opacity-70"
+    className="fixed pointer-events-none text-white opacity-70 text-4xl"
     style={{
       left: `${left}%`,
       animation: "fall 10s linear infinite",
@@ -153,7 +153,9 @@ function App() {
 
   return (
     <div 
-      className="min-h-screen bg-gradient-to-r from-red-600 via-green-600 to-red-600 overflow-hidden relative"
+      className={`min-h-screen ${isApocalypse 
+        ? "bg-gradient-to-r from-red-900 via-green-900 to-red-900" 
+        : "bg-gradient-to-r from-red-600 via-green-600 to-red-600"} overflow-hidden relative`}
       onMouseMove={handleMouseMove}
     >
       <style>
@@ -207,7 +209,6 @@ function App() {
     left={santa.left} 
     delay={santa.delay}
     onClick={handleSantaClick}
-    isApocalypse={isApocalypse}
   />
 ))}
 
@@ -218,17 +219,11 @@ function App() {
     delay={santa.delay}
     top={true}
     onClick={handleSantaClick}
-    isApocalypse={isApocalypse}
   />
       ))}
 
       {snowflakes.map(flake => (
-        <Snowflake 
-          key={flake.id} 
-          left={flake.left} 
-          delay={flake.delay} 
-          isApocalypse={isApocalypse}
-        />
+        <Snowflake key={flake.id} left={flake.left} delay={flake.delay} />
       ))}
 
       <div 
