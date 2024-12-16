@@ -109,6 +109,7 @@ function App() {
   const [lastPlayedTime, setLastPlayedTime] = useState(0);
   const [isApocalypse, setIsApocalypse] = useState(false);
   const hohoRef = useRef(null);
+  const elfSoundRef = useRef(null);
 
   const snowflakes = Array.from({ length: 50 }, (_, i) => ({
     id: i,
@@ -260,8 +261,8 @@ function App() {
       <div className="text-center p-8 bg-green-900/50">
         <h1 className="text-6xl font-bold mb-4 animate-pulse bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-transparent bg-clip-text">
           {isApocalypse 
-    ? "💀 SANTA'S SUPER APOCALYPTIC AI COMPANY 💀"
-    : "🤖 SANTA'S SUPER SPECTACULAR AI COMPANY 🤖"
+    ? "🤖 SANTA'S SUPER APOCALYPTIC AI COMPANY 🤖"
+    : "�� SANTA'S SUPER SPECTACULAR AI COMPANY 🤖"
   }
         </h1>
         <button
