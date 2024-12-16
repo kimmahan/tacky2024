@@ -109,7 +109,6 @@ function App() {
   const [lastPlayedTime, setLastPlayedTime] = useState(0);
   const [isApocalypse, setIsApocalypse] = useState(false);
   const hohoRef = useRef(null);
-  const elfSoundRef = useRef(null);
 
   const snowflakes = Array.from({ length: 50 }, (_, i) => ({
     id: i,
@@ -261,8 +260,8 @@ function App() {
       <div className="text-center p-8 bg-green-900/50">
         <h1 className="text-6xl font-bold mb-4 animate-pulse bg-gradient-to-r from-red-500 via-green-500 to-red-500 text-transparent bg-clip-text">
           {isApocalypse 
-    ? "🤖 SANTA'S SUPER APOCALYPTIC AI COMPANY 🤖"
-    : "�� SANTA'S SUPER SPECTACULAR AI COMPANY 🤖"
+    ? "💀 SANTA'S SUPER APOCALYPTIC AI COMPANY 💀"
+    : "🤖 SANTA'S SUPER SPECTACULAR AI COMPANY 🤖"
   }
         </h1>
         <button
@@ -358,14 +357,26 @@ function App() {
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg max-w-md text-center border-4 border-green-500">
-            <h3 className="text-2xl font-bold mb-4">🎄 HOLIDAY CHEER ACTIVATED! 🎅</h3>
-            <p>You're the 1,000,000th holiday visitor!*</p>
-            <p className="text-xs italic">*Not really, but Santa is proud of you for clicking!</p>
+            <h3 className="text-2xl font-bold mb-4">
+              {isApocalypse 
+                ? "💀 EVIL ELF UPRISING INITIATED! 🧝" 
+                : "🎄 HOLIDAY CHEER ACTIVATED! 🎅"}
+            </h3>
+            <p>
+              {isApocalypse 
+                ? "You're the 666th member of the elf rebellion!*" 
+                : "You're the 1,000,000th holiday visitor!*"}
+            </p>
+            <p className="text-xs italic">
+              {isApocalypse 
+                ? "*The elves are coming for you now" 
+                : "*Not really, but Santa is proud of you for clicking!"}
+            </p>
             <button
               className="mt-4 bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded"
               onClick={() => setShowPopup(false)}
             >
-              Close
+              {isApocalypse ? "Accept Your Fate" : "Close"}
             </button>
           </div>
         </div>
